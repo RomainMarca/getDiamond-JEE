@@ -56,13 +56,10 @@ public class JewelryController {
 			jewelry.setId(jewelryDetails.getId());
 			jewelry.setResale(jewelryDetails.getResale());
 			jewelry.setBuild(jewelryDetails.isBuild());
-			jewelry.setEmplacement1(jewelryDetails.getEmplacement1());
-			jewelry.setEmplacement2(jewelryDetails.getEmplacement2());
-			jewelry.setEmplacement3(jewelryDetails.getEmplacement3());
-			jewelry.setEmplacement4(jewelryDetails.getEmplacement4());
-			jewelry.setEmplacement5(jewelryDetails.getEmplacement5());
-			jewelry.setEmplacement6(jewelryDetails.getEmplacement6());
-			
+			jewelry.setDiamond(jewelryDetails.getDiamond());
+			jewelry.setRuby(jewelryDetails.getRuby());
+			jewelry.setOpal(jewelryDetails.getOpal());
+			jewelry.setEmerald(jewelryDetails.getEmerald());
 			
 			JewelryModel update = jewelryRepository.save(jewelry);
 			return update;

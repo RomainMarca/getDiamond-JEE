@@ -16,12 +16,10 @@ public class JewelryModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-		private String emplacement1;
-	    private String emplacement2;
-	    private String emplacement3;
-	    private String emplacement4;
-	    private String emplacement5;
-	    private String emplacement6;
+		private int ruby;
+		private int emerald;
+		private int diamond;
+		private int opal;
 	    private int gain;
 	    private int resale;
 	    private boolean build = false;
@@ -37,52 +35,36 @@ public class JewelryModel {
 			this.id = id;
 		}
 
-		public String getEmplacement1() {
-			return emplacement1;
+		public int getRuby() {
+			return ruby;
 		}
 
-		public void setEmplacement1(String emplacement1) {
-			this.emplacement1 = emplacement1;
+		public void setRuby(int ruby) {
+			this.ruby = ruby;
 		}
 
-		public String getEmplacement2() {
-			return emplacement2;
+		public int getEmerald() {
+			return emerald;
 		}
 
-		public void setEmplacement2(String emplacement2) {
-			this.emplacement2 = emplacement2;
+		public void setEmerald(int emerald) {
+			this.emerald = emerald;
 		}
 
-		public String getEmplacement3() {
-			return emplacement3;
+		public int getDiamond() {
+			return diamond;
 		}
 
-		public void setEmplacement3(String emplacement3) {
-			this.emplacement3 = emplacement3;
+		public void setDiamond(int diamond) {
+			this.diamond = diamond;
 		}
 
-		public String getEmplacement4() {
-			return emplacement4;
+		public int getOpal() {
+			return opal;
 		}
 
-		public void setEmplacement4(String emplacement4) {
-			this.emplacement4 = emplacement4;
-		}
-
-		public String getEmplacement5() {
-			return emplacement5;
-		}
-
-		public void setEmplacement5(String emplacement5) {
-			this.emplacement5 = emplacement5;
-		}
-
-		public String getEmplacement6() {
-			return emplacement6;
-		}
-
-		public void setEmplacement6(String emplacement6) {
-			this.emplacement6 = emplacement6;
+		public void setOpal(int opal) {
+			this.opal = opal;
 		}
 
 		public int getGain() {
@@ -108,4 +90,6 @@ public class JewelryModel {
 		public void setBuild(boolean build) {
 			this.build = build;
 		}
+
+		
 }
