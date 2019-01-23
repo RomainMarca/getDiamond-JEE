@@ -1,5 +1,7 @@
 package com.example.getdiamond.models;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -15,14 +17,16 @@ public class JewelryModel {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+		
+		private String name;
 		private int ruby;
 		private int emerald;
 		private int diamond;
 		private int opal;
 	    private int gain;
 	    private int resale;
-	    private boolean build = false;
+	    private boolean built = false;
+	    private Date lastBuilt;
 	    
 		public JewelryModel() {
 		}
@@ -33,6 +37,14 @@ public class JewelryModel {
 
 		public void setId(Long id) {
 			this.id = id;
+		}
+		
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
 		}
 
 		public int getRuby() {
@@ -83,13 +95,19 @@ public class JewelryModel {
 			this.resale = resale;
 		}
 
-		public boolean isBuild() {
-			return build;
+		public boolean isBuilt() {
+			return built;
 		}
 
-		public void setBuild(boolean build) {
-			this.build = build;
+		public void setBuilt(boolean built) {
+			this.built = built;
 		}
 
-		
+		public Date getLastBuilt() {
+			return lastBuilt;
+		}
+
+		public void setLastBuilt(Date lastBuilt) {
+			this.lastBuilt = lastBuilt;
+		}
 }

@@ -1,5 +1,6 @@
 package com.example.getdiamond.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -27,11 +28,26 @@ public class JewelryController {
 	@Autowired
 	JewelryRepository jewelryRepository;
 	
-	//get all
+		//get all
 		@GetMapping("/jewelry")
 		public List<JewelryModel> getAll() {
 			return jewelryRepository.findAll();
 		}
+		
+		//get all false
+		@GetMapping("/jewerlyfalse")
+		public List<JewelryModel> getAllfalse() {
+			ArrayList<JewelryModel> newJewelList = new ArrayList<>();
+			ArrayList<JewelryModel> jewerList = (ArrayList<JewelryModel>) jewelryRepository.findAll();
+			for (JewelryModel jewel: jewerList) {
+				if (!jewel.isBuilt()) {
+					newJewelList.add(jewel);
+				}
+			}
+			return newJewelList;
+		}
+		
+		
 		
 		//GetMapping single
 		@ GetMapping("/jewelry/{id}")
@@ -55,11 +71,12 @@ public class JewelryController {
 		
 			jewelry.setId(jewelryDetails.getId());
 			jewelry.setResale(jewelryDetails.getResale());
-			jewelry.setBuild(jewelryDetails.isBuild());
+			jewelry.setBuilt(jewelryDetails.isBuilt());
 			jewelry.setDiamond(jewelryDetails.getDiamond());
 			jewelry.setRuby(jewelryDetails.getRuby());
 			jewelry.setOpal(jewelryDetails.getOpal());
 			jewelry.setEmerald(jewelryDetails.getEmerald());
+			jewelry.setLastBuilt(jewelryDetails.getLastBuilt());
 			
 			JewelryModel update = jewelryRepository.save(jewelry);
 			return update;
