@@ -25,7 +25,7 @@ public class JewelryModel {
 		private int opal;
 	    private int gain;
 	    private int resale;
-	    private boolean built = false;
+	    private boolean built;
 	    private Date lastBuilt;
 	    
 		public JewelryModel() {
@@ -38,7 +38,7 @@ public class JewelryModel {
 		public void setId(Long id) {
 			this.id = id;
 		}
-		
+
 		public String getName() {
 			return name;
 		}
@@ -110,4 +110,6 @@ public class JewelryModel {
 		public void setLastBuilt(Date lastBuilt) {
 			this.lastBuilt = lastBuilt;
 		}
+
+		
 }

@@ -35,7 +35,7 @@ public class JewelryController {
 		}
 		
 		//get all false
-		@GetMapping("/jewerlyfalse")
+		@GetMapping("/jewelryfalse")
 		public List<JewelryModel> getAllfalse() {
 			ArrayList<JewelryModel> newJewelList = new ArrayList<>();
 			ArrayList<JewelryModel> jewerList = (ArrayList<JewelryModel>) jewelryRepository.findAll();
@@ -69,8 +69,10 @@ public class JewelryController {
 			JewelryModel jewelry = jewelryRepository.findById(jewelryId)
 					.orElseThrow(() -> new ResourceNotFoundException("JewelryModel", "id", jewelryId));
 		
-			jewelry.setId(jewelryDetails.getId());
+			jewelry.setName(jewelryDetails.getName());
+			//jewelry.setId(jewelryDetails.getId());
 			jewelry.setResale(jewelryDetails.getResale());
+			jewelry.setGain(jewelryDetails.getGain());
 			jewelry.setBuilt(jewelryDetails.isBuilt());
 			jewelry.setDiamond(jewelryDetails.getDiamond());
 			jewelry.setRuby(jewelryDetails.getRuby());

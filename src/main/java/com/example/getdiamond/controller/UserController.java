@@ -52,7 +52,7 @@ public class UserController {
 		UserModel userModel = userRepository.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("UserModel", "id", userId));
 	
-		userModel.setId(userDetails.getId());
+		//userModel.setId(userDetails.getId());
 		userModel.setName(userDetails.getName());
 		userModel.setPassword(userDetails.getPassword());
 		userModel.setMoney(userDetails.getMoney());
