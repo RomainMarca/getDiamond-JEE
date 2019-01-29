@@ -1,5 +1,7 @@
 package com.example.getdiamond.models;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
@@ -15,16 +17,16 @@ public class JewelryModel {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-		private String emplacement1;
-	    private String emplacement2;
-	    private String emplacement3;
-	    private String emplacement4;
-	    private String emplacement5;
-	    private String emplacement6;
+		
+		private String name;
+		private int ruby;
+		private int emerald;
+		private int diamond;
+		private int opal;
 	    private int gain;
 	    private int resale;
-	    private boolean build = false;
+	    private boolean built;
+	    private Date lastBuilt;
 	    
 		public JewelryModel() {
 		}
@@ -37,52 +39,44 @@ public class JewelryModel {
 			this.id = id;
 		}
 
-		public String getEmplacement1() {
-			return emplacement1;
+		public String getName() {
+			return name;
 		}
 
-		public void setEmplacement1(String emplacement1) {
-			this.emplacement1 = emplacement1;
+		public void setName(String name) {
+			this.name = name;
 		}
 
-		public String getEmplacement2() {
-			return emplacement2;
+		public int getRuby() {
+			return ruby;
 		}
 
-		public void setEmplacement2(String emplacement2) {
-			this.emplacement2 = emplacement2;
+		public void setRuby(int ruby) {
+			this.ruby = ruby;
 		}
 
-		public String getEmplacement3() {
-			return emplacement3;
+		public int getEmerald() {
+			return emerald;
 		}
 
-		public void setEmplacement3(String emplacement3) {
-			this.emplacement3 = emplacement3;
+		public void setEmerald(int emerald) {
+			this.emerald = emerald;
 		}
 
-		public String getEmplacement4() {
-			return emplacement4;
+		public int getDiamond() {
+			return diamond;
 		}
 
-		public void setEmplacement4(String emplacement4) {
-			this.emplacement4 = emplacement4;
+		public void setDiamond(int diamond) {
+			this.diamond = diamond;
 		}
 
-		public String getEmplacement5() {
-			return emplacement5;
+		public int getOpal() {
+			return opal;
 		}
 
-		public void setEmplacement5(String emplacement5) {
-			this.emplacement5 = emplacement5;
-		}
-
-		public String getEmplacement6() {
-			return emplacement6;
-		}
-
-		public void setEmplacement6(String emplacement6) {
-			this.emplacement6 = emplacement6;
+		public void setOpal(int opal) {
+			this.opal = opal;
 		}
 
 		public int getGain() {
@@ -101,11 +95,21 @@ public class JewelryModel {
 			this.resale = resale;
 		}
 
-		public boolean isBuild() {
-			return build;
+		public boolean isBuilt() {
+			return built;
 		}
 
-		public void setBuild(boolean build) {
-			this.build = build;
+		public void setBuilt(boolean built) {
+			this.built = built;
 		}
+
+		public Date getLastBuilt() {
+			return lastBuilt;
+		}
+
+		public void setLastBuilt(Date lastBuilt) {
+			this.lastBuilt = lastBuilt;
+		}
+
+		
 }
